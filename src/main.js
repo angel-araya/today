@@ -4,16 +4,14 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import BootstrapVue from 'bootstrap-vue'
+import VueResource from 'vue-resource'
 
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import 'bootstrap/dist/css/bootstrap.css'
 
-import random from './generator/random.js'
-
-console.log(random.randomString(4))
-
 Vue.config.productionTip = false
 Vue.use(BootstrapVue)
+Vue.use(VueResource)
 
 /* eslint-disable no-new */
 new Vue({

@@ -3,7 +3,7 @@
   <div class="input-area">
     <div class="row">
       <div class="col-md-12">
-        <textarea class="form-control" rows="10" name="input" placeholder="What did you do today?"></textarea>
+        <textarea v-model="text" class="form-control" rows="10" name="input" placeholder="What did you do today?"></textarea>
       </div>
     </div>
     <div class="row">
@@ -19,11 +19,17 @@
   export default {
     name: 'InputArea',
     data: function() {
-      return {}
+      return {
+        text: ""
+      }
     },
     methods: {
       send: function() {
-        console.log('Sent')
+        console.log("sending")
+        this.$http.get('https://jsonplaceholder.typicode.com/posts/1')
+          .then(data => {
+            this.text = data.body.title
+          })
       }
     }
   }

@@ -1,7 +1,7 @@
 <template>
   <div class="container-fluid" id="app">
     <time-header></time-header>
-    <input-area></input-area>
+    <router-view></router-view>
   </div>
 </template>
 
