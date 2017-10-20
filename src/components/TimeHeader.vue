@@ -1,10 +1,10 @@
 
 <template>
   <div class="row time-header">
-    <div class="col-md-6">
+    <div class="col">
       <h3 class="">{{ date }}</h3>
     </div>
-    <div class="col-md-6">
+    <div class="col">
       <h3 class="right-align">{{ time }}</h3>
     </div>
   </div>
