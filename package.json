@@ -1,7 +1,7 @@
 {
-  "name": "alignments",
-  "version": "1.0.0",
-  "description": "Create a visualize DNA/RNA alignments",
+  "name": "today",
+  "version": "0.0.1",
+  "description": "Keep a shot journal of what happened today",
   "author": "Angel Araya",
   "private": true,
   "scripts": {
