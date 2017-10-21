@@ -2,13 +2,14 @@
 
   <div class="input-area">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col">
         <textarea v-model="text" class="form-control" rows="10" name="input" placeholder="What did you do today?"></textarea>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col">
         <button @click="send()" class="btn btn-primary">Send</button>
+        <button @click="$router.push('/')" class="btn btn-info">Home</button>
       </div>
     </div>
   </div>
