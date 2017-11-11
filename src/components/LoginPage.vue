@@ -10,9 +10,7 @@
       </div>
       <br>
       <div class="row">
-        <input v-if="haveToken" @click="newPost()" class="btn btn-primary" type="submit" value="New">
-        <input v-if="!haveToken" @click="login()" type="submit" class="btn btn-info" value="Log in">
-        <input v-else @click="logout()" type="submit" class="btn btn-warning" value="Log out">
+        <input @click="login()" type="submit" class="btn btn-info" value="Log in">
       </div>
     </form>
   </div>
@@ -32,10 +30,11 @@
           user: 'angel',
           password: 'damian'
         }
-        this.$http.post('http://localhost:8999/api/auth', options).then(data => {
+        let url = `${process.env.PROTOCOL}://${process.env.SERVER}:${process.env.PORT}`
+        this.$http.post(`${url}/api/auth`, options).then(data => {
           localStorage.token = data.body.token
           this.haveToken = true
-        }, error => {
+        }).catch(error => {
           console.log(`Error: ${error}`)
         })
       },
