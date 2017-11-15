@@ -1,18 +1,16 @@
 <template>
-  <div class="login-page">
-    <form class="form-group container-fluid">
-      <div class="row">
-        <input class="form-control" type="text" placeholder="Username">
+  <div class="grid-container">
+      <div class="item-1 center-flex">
+        <input class="" type="text" placeholder="Username">
       </div>
-      <br>
-      <div class="row">
-        <input class="form-control" type="password" placeholder="Password">
+
+      <div class="item-2 center-flex">
+        <input class="" type="password" placeholder="Password">
       </div>
-      <br>
-      <div class="row">
+
+      <div class="item-3 center-flex">
         <input @click="login()" type="submit" class="btn btn-info" value="Log in">
       </div>
-    </form>
   </div>
 </template>
 
@@ -58,8 +56,34 @@
 
 </script>
 
-<style>
-  .login-page {
-    margin: 2em;
-  }
+<style scoped>
+.grid-container {
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr)
+}
+
+.center-flex {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+}
+
+input {
+  text-align: center;
+}
+
+.item-1 {
+  grid-row: 1;
+}
+
+.item-2 {
+  grid-row: 2;
+}
+
+.item-3 {
+  grid-row: 3;
+}
+
 </style>

@@ -1,11 +1,11 @@
 
 <template>
-  <div class="row time-header">
-    <div class="col">
+  <div class="grid-container">
+    <div class="">
       <h3 class="">{{ computedDate }}</h3>
     </div>
-    <div class="col">
-      <h3 class="right-align">{{ computedTime }}</h3>
+    <div class="item-3">
+      <h3 class="">{{ computedTime }}</h3>
     </div>
   </div>
 </template>
@@ -44,12 +44,20 @@
 
 </script>
 
-<style>
-  .right-align {
-    float: right;
-  }
+<style scoped>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2em;
 
-  .time-header{
-    margin: 2em;
-  }
+  font-family: Arial;
+}
+
+.item-3 {
+  grid-column: 3;
+}
+
+h3 {
+  text-align: center;
+}
 </style>
