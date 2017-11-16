@@ -15,45 +15,48 @@
 </template>
 
 <script>
-  export default {
-    name: 'LoginPage',
-    data: function () {
-      return {
-        haveToken: false
+export default {
+  name: 'LoginPage',
+  data: function() {
+    return {
+      haveToken: false,
+    }
+  },
+  methods: {
+    login() {
+      const options = {
+        user: 'angel',
+        password: 'damian',
       }
-    },
-    methods: {
-      login() {
-        const options = {
-          user: 'angel',
-          password: 'damian'
-        }
-        let url = `${process.env.PROTOCOL}://${process.env.SERVER}:${process.env.PORT}`
-        this.$http.post(`${url}/api/auth`, options).then(data => {
+      let url = `${process.env.PROTOCOL}://${process.env.SERVER}:${process.env
+        .PORT}`
+      this.$http
+        .post(`${url}/api/auth`, options)
+        .then(data => {
           localStorage.token = data.body.token
           this.haveToken = true
-        }).catch(error => {
+        })
+        .catch(error => {
           console.log(`Error: ${error}`)
         })
-      },
+    },
 
-      logout() {
-        localStorage.token = ""
-        this.haveToken = false
-      },
-      newPost() {
-        if (this.haveToken) {
-          this.$router.push('/new')
-        } else {
-          console.log('ERROR, not haveToken')
-        }
+    logout() {
+      localStorage.token = ''
+      this.haveToken = false
+    },
+    newPost() {
+      if (this.haveToken) {
+        this.$router.push('/new')
+      } else {
+        console.log('ERROR, not haveToken')
       }
     },
-    mounted() {
-      this.haveToken = localStorage.token !== ""
-    }
-  }
-
+  },
+  mounted() {
+    this.haveToken = localStorage.token !== ''
+  },
+}
 </script>
 
 <style scoped>

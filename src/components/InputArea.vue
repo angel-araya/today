@@ -17,24 +17,24 @@
 </template>
 
 <script>
-  export default {
-    name: 'InputArea',
-    data: function() {
-      return {
-        text: ""
-      }
-    },
-    methods: {
-      send: function() {
-        console.log("sending")
-        this.$http.get('https://jsonplaceholder.typicode.com/posts/1')
-          .then(data => {
-            this.text = data.body.title
-          })
-      }
+export default {
+  name: 'InputArea',
+  data: function() {
+    return {
+      text: '',
     }
-  }
-
+  },
+  methods: {
+    send: function() {
+      console.log('sending')
+      this.$http
+        .get('https://jsonplaceholder.typicode.com/posts/1')
+        .then(data => {
+          this.text = data.body.title
+        })
+    },
+  },
+}
 </script>
 
 <style>

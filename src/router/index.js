@@ -10,12 +10,12 @@ export default new Router({
     {
       path: '/',
       name: 'LoginPage',
-      component: LoginPage
+      component: LoginPage,
     },
     {
       path: '/new',
       name: 'New Entry',
-      component: InputArea
-    }
-  ]
+      component: InputArea,
+    },
+  ],
 })
