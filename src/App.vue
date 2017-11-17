@@ -7,14 +7,14 @@
 
 <script>
 import TimeHeader from '@/components/TimeHeader.vue'
-import InputArea from "./components/InputArea.vue";
+import InputArea from '@/components/InputArea.vue'
 
 export default {
   name: 'app',
   components: {
     InputArea,
-    TimeHeader
-  }
+    TimeHeader,
+  },
 }
 </script>
 

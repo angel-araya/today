@@ -11,37 +11,43 @@
 </template>
 
 <script>
-  import { pad } from './../util'
+import { pad } from './../util'
 
-  export default {
-    name: 'TimeHeader',
-    data: function() {
-      return {
-        now: new Date(Date.now()),
-        interval: null
-      }
-    },
-
-    beforeCreate: function() {
-      this.interval = setInterval(function() {
-        this.now = new Date(Date.now())
-      }.bind(this), 10)
-    },
-
-    beforeDestroy: function() {
-      clearInterval(this.interval)
-    },
-    computed: {
-      computedTime: function() {
-        return `${pad(this.now.getHours())}:${pad(this.now.getMinutes())}:${pad(this.now.getSeconds())}`
-      },
-
-      computedDate: function() {
-        return `${pad(this.now.getFullYear())}-${pad(this.now.getMonth()+1)}-${pad(this.now.getDate())}`
-      }
+export default {
+  name: 'TimeHeader',
+  data: function() {
+    return {
+      now: new Date(Date.now()),
+      interval: null,
     }
-  }
+  },
 
+  beforeCreate: function() {
+    this.interval = setInterval(
+      function() {
+        this.now = new Date(Date.now())
+      }.bind(this),
+      10,
+    )
+  },
+
+  beforeDestroy: function() {
+    clearInterval(this.interval)
+  },
+  computed: {
+    computedTime: function() {
+      return `${pad(this.now.getHours())}:${pad(this.now.getMinutes())}:${pad(
+        this.now.getSeconds(),
+      )}`
+    },
+
+    computedDate: function() {
+      return `${pad(this.now.getFullYear())}-${pad(
+        this.now.getMonth() + 1,
+      )}-${pad(this.now.getDate())}`
+    },
+  },
+}
 </script>
 
 <style scoped>
